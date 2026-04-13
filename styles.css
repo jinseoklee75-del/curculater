@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f1115;
+  --panel: #1a1d24;
+  --key: #2a2f3a;
+  --key-hover: #353b48;
+  --key-fn: #3d4452;
+  --key-op: #4c6ef5;
+  --key-op-hover: #5c7cfa;
+  --key-eq: #339af0;
+  --key-eq-hover: #4dabf7;
+  --text: #f1f3f5;
+  --text-muted: #868e96;
+  --radius: 14px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  background: radial-gradient(ellipse 120% 80% at 50% -20%, #2b3550, var(--bg));
+  color: var(--text);
+}
+
+.calc {
+  width: min(100% - 2rem, 360px);
+  padding: 1.25rem;
+  background: var(--panel);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.calc__header {
+  margin-bottom: 0.5rem;
+}
+
+.calc__title {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+
+.calc__sub {
+  margin: 0.35rem 0 0;
+  min-height: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  font-family: "JetBrains Mono", monospace;
+  word-break: break-all;
+}
+
+.calc__display {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.25rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 600;
+  text-align: right;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.calc__keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+
+.key {
+  appearance: none;
+  border: none;
+  border-radius: var(--radius);
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--key);
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.08s ease;
+}
+
+.key:hover {
+  background: var(--key-hover);
+}
+
+.key:active {
+  transform: scale(0.97);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--key-eq);
+  outline-offset: 2px;
+}
+
+.key--fn {
+  background: var(--key-fn);
+}
+
+.key--fn:hover {
+  background: #4a5162;
+}
+
+.key--op {
+  background: var(--key-op);
+  color: #fff;
+}
+
+.key--op:hover {
+  background: var(--key-op-hover);
+}
+
+.key--eq {
+  background: var(--key-eq);
+  color: #fff;
+}
+
+.key--eq:hover {
+  background: var(--key-eq-hover);
+}
+
+.key--wide {
+  grid-column: span 2;
+}

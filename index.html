@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="calc" aria-label="계산기">
+      <header class="calc__header">
+        <h1 class="calc__title">계산기</h1>
+        <p class="calc__sub" id="expression" aria-live="polite"></p>
+      </header>
+      <output class="calc__display" id="display" aria-live="polite" for="keys">0</output>
+      <div class="calc__keys" id="keys" role="group" aria-label="버튼">
+        <button type="button" class="key key--fn" data-action="clear">AC</button>
+        <button type="button" class="key key--fn" data-action="sign">±</button>
+        <button type="button" class="key key--fn" data-action="percent">%</button>
+        <button type="button" class="key key--op" data-action="op" data-op="/">÷</button>
+
+        <button type="button" class="key" data-digit="7">7</button>
+        <button type="button" class="key" data-digit="8">8</button>
+        <button type="button" class="key" data-digit="9">9</button>
+        <button type="button" class="key key--op" data-action="op" data-op="*">×</button>
+
+        <button type="button" class="key" data-digit="4">4</button>
+        <button type="button" class="key" data-digit="5">5</button>
+        <button type="button" class="key" data-digit="6">6</button>
+        <button type="button" class="key key--op" data-action="op" data-op="-">−</button>
+
+        <button type="button" class="key" data-digit="1">1</button>
+        <button type="button" class="key" data-digit="2">2</button>
+        <button type="button" class="key" data-digit="3">3</button>
+        <button type="button" class="key key--op" data-action="op" data-op="+">+</button>
+
+        <button type="button" class="key key--wide" data-digit="0">0</button>
+        <button type="button" class="key" data-action="dot">.</button>
+        <button type="button" class="key key--eq" data-action="equals">=</button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
